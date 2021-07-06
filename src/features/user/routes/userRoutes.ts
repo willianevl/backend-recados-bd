@@ -16,6 +16,7 @@ export default class UserRoutes {
       routes.post("/user", [UserCamposObrigatorios, ConfirmPasswords, PasswordMinimoDeCaracteres, UsernameJaExiste], controller.store);
       routes.put("/user/:id", [UserCamposObrigatorios, UserNaoExiste, ConfirmPasswords], controller.update);
       routes.delete("/user/:id", [UserNaoExiste], controller.delete);
+      routes.get("/user", controller.show);
   
       return routes;
     }

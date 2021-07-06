@@ -34,4 +34,10 @@ export default class UserController {
 
         return res.status(200).json((user.affected as number > 0)? "Usuário excluído": "Falha na exclusão");
     }
+
+    public async show(req: Request, res: Response){
+        const users = await User.find();
+
+        return res.status(200).json(users)
+    }
 }
