@@ -31,7 +31,6 @@ export class CreateTableNotes1625529118099 implements MigrationInterface {
                         type: "varchar",
                         length: "36",
                         isNullable: false,
-                        isUnique: true
                     }
                     
                 ]
