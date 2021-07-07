@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 
 import Database from "./core/data/connections/Database";
@@ -7,6 +8,7 @@ import UserRoutes from "./features/user/routes/userRoutes";
 const app = express();
 // Receber json no corpo da Requisição
 app.use(express.json());
+app.use(cors());
 
 // Vincular as rotas
 const userRoutes = new UserRoutes().init();
