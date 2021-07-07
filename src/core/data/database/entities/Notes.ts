@@ -14,17 +14,16 @@ export class Notes extends BaseEntity {
     description: string;
 
     @Column({name: "user_id"})
-    userID: string;
+    userID?: string;
 
     @ManyToOne(() => User, user => user.notes)
     @JoinColumn({name: 'user_id', referencedColumnName: 'id'})
     user?: User
 
-    constructor(title: string, description: string, userID: string){
+    constructor(title: string, description: string){
         super();
         this.title = title;
         this.description = description;
-        this.userID = userID;
     }
 
     @BeforeInsert()

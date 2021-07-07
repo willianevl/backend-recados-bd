@@ -4,10 +4,11 @@ import { Notes } from "../../../core/data/database/entities/Notes";
 
 export default class NotesController {
     public async store(req: Request, res: Response){
-        const { title, description, userID } = req.body;
+        const { title, description} = req.body;
+        const { userID } = req.params;
 
         try {
-            const note = await new Notes(title, description, userID).save();
+            const note = await new Notes(title, description).save();
 
             return res.status(201).json(note);
         } catch (error) {
@@ -33,5 +34,11 @@ export default class NotesController {
         const note = await Notes.delete(id);
 
         return res.status(200).json((note.affected as number > 0)? "Nota excluído": "Falha na exclusão");
+    }
+
+    public async show(req: Request, res: Response){
+        const notes = await Notes.find();
+
+        return res.status(200).json(notes);
     }
 }

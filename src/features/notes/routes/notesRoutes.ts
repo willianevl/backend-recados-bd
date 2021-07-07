@@ -8,9 +8,10 @@ export default class NotesRoutes {
   
       const controller = new NotesController();
   
-        routes.post("/notes", [NotesCamposObrigatorios], controller.store);
+        routes.post("/notes/:userID", [NotesCamposObrigatorios], controller.store);
         routes.put("/notes/:id", [NotesCamposObrigatorios], controller.update);
         routes.delete("/notes/:id", controller.delete);
+        routes.get("/notes", controller.show);
   
       return routes;
     }
