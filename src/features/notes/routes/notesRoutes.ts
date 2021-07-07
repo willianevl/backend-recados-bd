@@ -12,6 +12,7 @@ export default class NotesRoutes {
         routes.put("/notes/:id", [NotesCamposObrigatorios], controller.update);
         routes.delete("/notes/:id", controller.delete);
         routes.get("/notes", controller.show);
+        routes.get("/notes/:userID", controller.notesByUserID);
   
       return routes;
     }
