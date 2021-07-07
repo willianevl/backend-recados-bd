@@ -53,7 +53,7 @@ export default class NotesController {
     public async index(req: Request, res: Response){
         const { noteID } = req.params;
 
-        const note = await Notes.findOne(noteID);
+        const note = await Notes.findOne({id: noteID});
         return res.status(200).json(note);
     }
 }
