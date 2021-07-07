@@ -16,6 +16,9 @@ export class CheckedNotes extends BaseEntity {
     @Column({name: "user_id"})
     userID: string;
 
+    @Column({name: "date"})
+    date?: string;
+
     @ManyToOne(() => User, user => user.notes)
     @JoinColumn({name: 'user_id', referencedColumnName: 'id'})
     user?: User;
@@ -29,6 +32,10 @@ export class CheckedNotes extends BaseEntity {
 
     @BeforeInsert()
     createPrimaryKey(){
+        let newDate = new Date()
+        let date = `${newDate.getDate()}-${newDate.getMonth()}-${newDate.getFullYear()}`
+
         this.id = uuidv4();
+        this.date = date;
     }
 }

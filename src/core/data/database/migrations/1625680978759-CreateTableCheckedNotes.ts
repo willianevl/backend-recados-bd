@@ -32,6 +32,11 @@ export class CreateTableCheckedNotes1625680978759 implements MigrationInterface 
                         length: "36",
                         isNullable: false,
                     },
+                    {
+                        name: "date",
+                        type: "date",
+                        isNullable: false,
+                    },
                 ]
             })
         );
