@@ -14,7 +14,7 @@ export class CheckedNotes extends BaseEntity {
     description: string;
 
     @Column({name: "user_id"})
-    userID?: string;
+    userID: string;
 
     @ManyToOne(() => User, user => user.notes)
     @JoinColumn({name: 'user_id', referencedColumnName: 'id'})

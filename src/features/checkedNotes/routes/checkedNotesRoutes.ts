@@ -2,7 +2,7 @@ import { Router } from "express";
 import CheckedNotesController from "../controllers/checkedNotesController";
 
 
-export default class NotesRoutes {
+export default class CheckedNotesRoutes {
     public init(): Router {
       const routes = Router();
   
