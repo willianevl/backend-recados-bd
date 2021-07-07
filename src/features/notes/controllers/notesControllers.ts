@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { Notes } from "../../../core/data/database/entities/Notes";
+import { User } from "../../../core/data/database/entities/User";
 
 
 export default class NotesController {
@@ -39,6 +40,13 @@ export default class NotesController {
     public async show(req: Request, res: Response){
         const notes = await Notes.find();
 
+        return res.status(200).json(notes);
+    }
+
+    public async notesByUserID(req: Request, res: Response){
+        const { userID } = req.params;
+
+        const notes = await Notes.find({userID: userID});
         return res.status(200).json(notes);
     }
 }
