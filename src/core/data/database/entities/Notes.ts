@@ -20,8 +20,9 @@ export class Notes extends BaseEntity {
     @JoinColumn({name: 'user_id', referencedColumnName: 'id'})
     user?: User
 
-    constructor(title: string, description: string){
+    constructor(title: string, description: string, userID: string){
         super();
+        this.userID = userID;
         this.title = title;
         this.description = description;
     }

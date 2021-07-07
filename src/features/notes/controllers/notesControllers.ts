@@ -9,7 +9,7 @@ export default class NotesController {
         const { userID } = req.params;
 
         try {
-            const note = await new Notes(title, description).save();
+            const note = await new Notes(title, description, userID).save();
 
             return res.status(201).json(note);
         } catch (error) {
