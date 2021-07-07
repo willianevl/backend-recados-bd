@@ -14,7 +14,7 @@ export default class NotesRoutes {
         routes.delete("/notes/:id", controller.delete);
         routes.get("/notes", controller.show);
         routes.get("/notes/:userID", controller.notesByUserID);
-        routes.get("/notes/:noteID", [NotaNaoExiste], controller.index);
+        routes.get("/notes/user/:noteID", [NotaNaoExiste], controller.index);
   
       return routes;
     }
