@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { Notes } from "../../../core/data/database/entities/Notes";
-import { User } from "../../../core/data/database/entities/User";
+
 
 
 export default class NotesController {

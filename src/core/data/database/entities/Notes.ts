@@ -18,7 +18,7 @@ export class Notes extends BaseEntity {
 
     @ManyToOne(() => User, user => user.notes)
     @JoinColumn({name: 'user_id', referencedColumnName: 'id'})
-    user?: User
+    user?: User;
 
     constructor(title: string, description: string, userID: string){
         super();
