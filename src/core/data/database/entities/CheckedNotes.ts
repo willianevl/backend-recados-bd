@@ -32,8 +32,8 @@ export class CheckedNotes extends BaseEntity {
 
     @BeforeInsert()
     createPrimaryKey(){
-        let newDate = new Date()
-        let date = `${newDate.getDate()}-${newDate.getMonth()}-${newDate.getFullYear()}`
+        let newDate = new Date();
+        let date = `${newDate.getDate()}-${newDate.getMonth()}-${newDate.getFullYear()}`;
 
         this.id = uuidv4();
         this.date = date;
