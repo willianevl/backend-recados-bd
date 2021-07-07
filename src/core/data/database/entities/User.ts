@@ -1,5 +1,6 @@
 import {BaseEntity, BeforeInsert, Column, Entity, OneToMany, PrimaryColumn} from "typeorm";
 import { v4 as uuidv4 } from 'uuid';
+import { CheckedNotes } from "./CheckedNotes";
 import { Notes } from "./Notes";
 
 @Entity()
@@ -15,6 +16,9 @@ export class User extends BaseEntity {
 
     @OneToMany(() => Notes, notes => notes.user)
     notes?: Notes[];
+
+    @OneToMany(() => CheckedNotes, checkednotes => checkednotes.user)
+    checkedNotes?: CheckedNotes[];
 
     constructor(username: string, password: string, confirmPassword: string){
         super();

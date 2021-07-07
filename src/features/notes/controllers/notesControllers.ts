@@ -49,4 +49,11 @@ export default class NotesController {
         const notes = await Notes.find({userID: userID});
         return res.status(200).json(notes);
     }
+
+    public async index(req: Request, res: Response){
+        const { noteID } = req.params;
+
+        const note = await Notes.findOne(noteID);
+        return res.status(200).json(note);
+    }
 }

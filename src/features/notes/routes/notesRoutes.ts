@@ -1,5 +1,6 @@
 import { Router } from "express";
 import NotesController from "../controllers/notesControllers";
+import NotaNaoExiste from "../middlewares/NotaNaoExiste";
 import NotesCamposObrigatorios from "../middlewares/NotesCamposObrigatorios";
 
 export default class NotesRoutes {
@@ -13,6 +14,7 @@ export default class NotesRoutes {
         routes.delete("/notes/:id", controller.delete);
         routes.get("/notes", controller.show);
         routes.get("/notes/:userID", controller.notesByUserID);
+        routes.get("/notes/:noteID", [NotaNaoExiste], controller.index);
   
       return routes;
     }
