@@ -33,6 +33,6 @@ export class CheckedNotes extends BaseEntity {
     @BeforeInsert()
     createPrimaryKey(){
         this.id = uuidv4();
-        this.date = new Date();
+        this.date = new Date;
     }
 }
