@@ -34,7 +34,7 @@ export class CreateTableCheckedNotes1625680978759 implements MigrationInterface 
                     },
                     {
                         name: "date",
-                        type: "date",
+                        type: "timestamptz",
                         isNullable: false,
                     },
                 ]
